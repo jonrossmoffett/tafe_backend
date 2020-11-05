@@ -1,7 +1,7 @@
 <div class="grid grid-cols-1 bg-gray-900">
 
 <div class="grid grid cols-6 grid-flow-col bg-gray-500">
-    <div class="relative text-gray-600 col-span-1 ml-2 mt-2 bg-gray-200">
+    <div class="text-gray-600 col-span-1 ml-2 mt-2 bg-gray-200 w-48">
         <input wire:model="searchTerm" placeholder="Search...." class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"/>
     </div>
 </div>
