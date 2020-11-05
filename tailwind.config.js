@@ -16,7 +16,8 @@ module.exports = {
     },
 
     variants: {
-        opacity: ['responsive', 'hover', 'focus', 'disabled'],
+        opacity: [ 'hover', 'focus', 'disabled'],
+        // removed 'responsive' 
     },
 
     plugins: [require('@tailwindcss/ui')],
