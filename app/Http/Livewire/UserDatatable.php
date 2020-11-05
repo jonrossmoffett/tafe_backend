@@ -48,7 +48,14 @@ class UserDatatable extends Component
     }
 
     public function delete($id){
-        User::destroy($id);
+        $user = User::get()->where('id',$id)->first();
+        if($user->hasRole(['administrator','superadministrator'])){
+
+        }else{
+            User::destroy($id);
+        }
+
+        
         $this->resetForm();
     }
 
