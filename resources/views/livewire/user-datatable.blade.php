@@ -21,14 +21,14 @@
                 @foreach($data as $item)
                     <tr class="py-2">
                         @foreach($headers as $key => $value)
-                            <td class="mx-auto text-center py-2 border-r-2 border-cool-gray-200">
+                            <td class="mx-auto text-center py-2 border-t-2">
                                 {{!! is_array($value) ? $value['func']($item->$key) :$item->$key }}
                             </td>
                         @endforeach
                         
                         
                         <td class="text-center py-2" wire:click="delete({{$item->id}})">delete</td>
-                        <td class="text-center py-2 border-l-2" wire:click="updateForm({{$item->id}})">Edit</td>
+                        <td class="text-center py-2 border-t-2" wire:click="updateForm({{$item->id}})">Edit</td>
                     </tr>
                 @endforeach
             @else
