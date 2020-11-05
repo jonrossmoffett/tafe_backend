@@ -1,7 +1,7 @@
 <div class="grid grid-cols-1 bg-gray-900">
 
-<div class="grid grid cols-6 grid-flow-col bg-gray-500">
-        <input wire:model="searchTerm" placeholder="Search...." class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none px-2"/>
+<div class="grid grid-cols-6 grid-flow-col bg-gray-500">
+        <input wire:model="searchTerm" placeholder="Search...." class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none px-2 w-"/>
 </div>
 
     <table class="w-full bg-gray-500 mt-4">
