@@ -1,12 +1,12 @@
 <div class="grid grid-cols-1 bg-gray-100">
 
 <div class="grid grid-cols-6 grid-flow-col bg-gray-100">
-        <input  wire:model="searchTerm" placeholder="Search...." class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-t-lg text-sm focus:outline-none px-2 w-"/>
+        <input  wire:model="searchTerm" placeholder="Search...." class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-t-lg text-sm focus:outline-none px-2 "/>
 </div>
 
-    <table class="w-full bg-gray-500 mt-4">
+    <table class="w-full bg-gray-500">
 
-        <thead class="bg-gray-200 p-4">
+        <thead class="bg-gray-300 py-2 px-2">
             @foreach($headers as $key => $value)
             <th style="cursor: pointer" wire:click="sort('{{$key}}')">
                 {{is_array($value) ? $value['label'] : $value}}
