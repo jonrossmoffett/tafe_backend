@@ -44,6 +44,9 @@ class UserDatatable extends Component
         ];
     }
 
+    public function CloseErrorMsg(){
+        $this->ErrorMessage = '';
+    }
 
     public function sort($column){
         $this->sortColumn = $column;
