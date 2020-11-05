@@ -43,17 +43,11 @@ class PostsDatatable extends Component
             'user_id' => [
                 'label' => 'owner',
                 'func' => function($value){
-                    if($user = User::get()->where('id',$value)->withTrashed()->findOrFail()){
+                    if($user = User::get()->where('id',$value)->first()){
                         return $user->name;
                     }else{
                         return 'User Deleted';
                     }
-
-/*                     if($user = User::get()->where('id',$value)->first()){
-                        return $user->name;
-                    }else{
-                        return 'User Deleted';
-                    } */
                 }
             ],
             'Status' => [

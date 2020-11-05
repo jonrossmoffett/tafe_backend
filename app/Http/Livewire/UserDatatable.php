@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\User;
+use App\Models\Post;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Laratrust\Models\LaratrustRole;
@@ -55,6 +56,7 @@ class UserDatatable extends Component
         if($user->hasRole(['administrator','superadministrator'])){
             $this->ErrorMessage = 'You cannot delete administrators';
         }else{
+            Post::destroy()->where('user_id',$id);
             User::destroy($id);
         }
 
