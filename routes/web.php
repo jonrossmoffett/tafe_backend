@@ -17,7 +17,7 @@ use app\Http\Middleware\adminOnly;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::middleware(['auth:sanctum'])->get('/dashboard', function () {
