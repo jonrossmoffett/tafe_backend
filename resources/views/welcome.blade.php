@@ -50,7 +50,19 @@
                 <div class="mt-8 bg-white dark:bg-gray-800 shadow ">
 
 
-                <h1>ddd</h1>
+                @if (Route::has('login'))
+                <div class="hidden px-6 py-4 sm:block">
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
+                    @else
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                        @endif
+                    @endif
+                </div>
+                @endif
 
 
 
