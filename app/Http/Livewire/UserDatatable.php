@@ -56,7 +56,7 @@ class UserDatatable extends Component
         if($user->hasRole(['administrator','superadministrator'])){
             $this->ErrorMessage = 'You cannot delete administrators';
         }else{
-            Post::destroy()->where('user_id',$id);
+            Post::where('user_id',$id)->delete();
             User::destroy($id);
         }
 
