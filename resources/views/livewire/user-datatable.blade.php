@@ -1,12 +1,12 @@
 <div class="grid grid-cols-1">
 
 <div class="grid grid cols-6 grid-flow-col">
-    <div class="pt-2 relative text-gray-600 col-span-1 bg-red-600">
+    <div class="pt-2 relative text-gray-600 col-span-1 ml-4 p-2">
         <input wire:model="searchTerm" placeholder="Search...." class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"/>
     </div>
 </div>
 
-    <table class="w-full bg-gray-500">
+    <table class="w-full bg-gray-500 mt-4">
 
         <thead class="bg-gray-200 p-4">
             @foreach($headers as $key => $value)
