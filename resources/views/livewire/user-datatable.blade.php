@@ -1,6 +1,7 @@
 <div>
 
-    <div class="pt-2 relative mx-auto text-gray-600">
+<div class="w-100">
+<div class="pt-2 relative mx-auto text-gray-600">
         <input wire:model="searchTerm" class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
           type="search" name="search" placeholder="Search">
         <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
@@ -13,9 +14,11 @@
           </svg>
         </button>
       </div>
+</div>
 
 
-    <input wire:model="searchTerm" placeholder="Search...." class=""/>
+
+    <input wire:model="searchTerm" placeholder="Search...." class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"/>
     <table class="w-full bg-gray-500">
 
         <thead class="bg-gray-200 p-4">
