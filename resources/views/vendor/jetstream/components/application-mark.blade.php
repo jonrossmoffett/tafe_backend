@@ -1,6 +1,6 @@
 <div class="w-25">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 483 327" enable-background="new 0 0 483 327" xml:space="preserve" height="auto" width="100%">
+	 viewBox="0 0 483 327" enable-background="new 0 0 483 327" xml:space="preserve" {{ $attributes }}>
 <g>
 	<polygon fill="#00AEEF" points="101.3,279.7 47.5,279.7 153.4,67.9 259.3,279.7 205.5,279.7 219.8,308.4 301.1,308.4 153.4,12.9 
 		5.7,308.4 87,308.4 	"/>

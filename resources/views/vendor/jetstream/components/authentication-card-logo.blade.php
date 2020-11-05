@@ -4,7 +4,7 @@
         <path d="M14.134 45.885A23.914 23.914 0 0024 48c13.255 0 24-10.745 24-24 0-3.516-.756-6.856-2.115-9.866-4.659 15.143-16.608 27.092-31.75 31.751z" fill="#6875F5"/>
     </svg> -->
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 483 327" enable-background="new 0 0 483 327" xml:space="preserve" height="auto" width="100%">
+	 viewBox="0 0 483 327" enable-background="new 0 0 483 327" xml:space="preserve" {{ $attributes }}>
 <g>
 	<polygon fill="#00AEEF" points="101.3,279.7 47.5,279.7 153.4,67.9 259.3,279.7 205.5,279.7 219.8,308.4 301.1,308.4 153.4,12.9 
 		5.7,308.4 87,308.4 	"/>
