@@ -8,7 +8,7 @@
 
         <thead class="bg-gray-300 py-2 px-2">
             @foreach($headers as $key => $value)
-            <th style="cursor: pointer" wire:click="sort('{{$key}}')">
+            <th class="py-2 px-2" style="cursor: pointer" wire:click="sort('{{$key}}')">
                 {{is_array($value) ? $value['label'] : $value}}
             </th>
             @endforeach
@@ -19,7 +19,7 @@
         <tbody>
             @if(count($data))
                 @foreach($data as $item)
-                    <tr>
+                    <tr class="py-2">
                         @foreach($headers as $key => $value)
                             <td class="mx-auto text-center">
                                 {{!! is_array($value) ? $value['func']($item->$key) :$item->$key }}
