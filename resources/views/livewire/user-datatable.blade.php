@@ -40,7 +40,11 @@
     {{$data->links()}}
 
     @if($ErrorMessage !== '')
+    <div class="flex justify-between">
     <h1 class="text-white p-4 text-lg bg-red-600 rounded-md">{{$ErrorMessage}}</h1>
+    <button class="bg-red-600 text-gray-100 w-10">
+    </div>
+    
     @endif
 
     @if($toggleForm)
