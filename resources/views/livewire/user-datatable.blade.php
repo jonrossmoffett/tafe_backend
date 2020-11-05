@@ -4,7 +4,7 @@
         <input  wire:model="searchTerm" placeholder="Search...." class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-t-lg text-sm focus:outline-none px-2 "/>
 </div>
 
-    <table class="w-full bg-gray-500">
+    <table class="w-full bg-gray-200">
 
         <thead class="bg-gray-300 py-2 px-2">
             @foreach($headers as $key => $value)
@@ -21,7 +21,7 @@
                 @foreach($data as $item)
                     <tr class="py-2">
                         @foreach($headers as $key => $value)
-                            <td class="mx-auto text-center py-2 border-r-4 border-cool-gray-200">
+                            <td class="mx-auto text-center py-2 border-r-2 border-cool-gray-200">
                                 {{!! is_array($value) ? $value['func']($item->$key) :$item->$key }}
                             </td>
                         @endforeach
