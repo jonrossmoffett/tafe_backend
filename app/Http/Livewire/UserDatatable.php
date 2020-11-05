@@ -24,6 +24,8 @@ class UserDatatable extends Component
     public $editId = null;
     public $toggleForm = false;
 
+    public $ErrorMessage = '';
+
     public $formResponseError = '';
     public $formResponseSuccess = '';
 
@@ -48,18 +50,19 @@ class UserDatatable extends Component
     }
 
     public function delete($id){
+        $this->ErrorMessage = '';
         $user = User::get()->where('id',$id)->first();
         if($user->hasRole(['administrator','superadministrator'])){
-
+            $this->ErrorMessage = 'You cannot delete administrators';
         }else{
             User::destroy($id);
         }
 
-        
         $this->resetForm();
     }
 
     public function updateForm($id){
+        $this->ErrorMessage = '';
         $user = User::get()->where('id',$id)->first();
         $this->toggleForm = true;
         $this->editId = $id;

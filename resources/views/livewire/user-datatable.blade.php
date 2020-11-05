@@ -35,6 +35,8 @@
     </table>
     {{$data->links()}}
 
+    <h1>{{$ErrorMessage}}</h1>
+
     @if($toggleForm)
 
     <div class=" w-full flex justify-content-center">
