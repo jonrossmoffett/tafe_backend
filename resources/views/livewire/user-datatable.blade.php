@@ -27,7 +27,7 @@
                         @endforeach
                         
                         
-                        <td class="text-center py-2" wire:click="delete({{$item->id}})">delete</td>
+                        <td class="text-center py-2 border-t-2" wire:click="delete({{$item->id}})">delete</td>
                         <td class="text-center py-2 border-t-2" wire:click="updateForm({{$item->id}})">Edit</td>
                     </tr>
                 @endforeach
@@ -39,7 +39,9 @@
     </table>
     {{$data->links()}}
 
+    @if($ErrorMessage !== '')
     <h1 class="text-white p-4 text-lg bg-red-600 rounded-md">{{$ErrorMessage}}</h1>
+    @endif
 
     @if($toggleForm)
 
