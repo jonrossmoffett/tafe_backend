@@ -40,9 +40,9 @@
     {{$data->links()}}
 
     @if($ErrorMessage !== '')
-    <div class="flex justify-between bg-red-600">
+    <div class="flex justify-between bg-red-600" wire:click="CloseErrorMsg">
     <h1 class="text-white p-4 text-lg bg-red-600 rounded-md" wire:click="CloseErrorMsg">{{$ErrorMessage}}</h1>
-    <button class="bg-red-600 text-gray-100 w-20">X</button>
+    <button class="bg-red-600 text-gray-100 w-20" wire:click="CloseErrorMsg">X</button>
     </div>
     
     @endif
