@@ -35,7 +35,7 @@
     </table>
     {{$data->links()}}
 
-    <h1>{{$ErrorMessage}}</h1>
+    <h1 class="text-white p-4 text-lg bg-red-600 rounded-md">{{$ErrorMessage}}</h1>
 
     @if($toggleForm)
 
