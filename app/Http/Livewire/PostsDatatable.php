@@ -43,9 +43,11 @@ class PostsDatatable extends Component
             'user_id' => [
                 'label' => 'owner',
                 'func' => function($value){
-                     //$user = User::get()->where('id',$value)->first();
-                     //return $user->name;
-                     return 'd';
+                    if($user = User::get()->where('id',$value)->first()){
+                        return $user->name;
+                    }else{
+                        return 'd';
+                    }
                 }
             ],
             'Status' => [
