@@ -41,11 +41,12 @@ class UserDatatable extends Component
                     return $value->diffForHumans();
                 }
             ],
-            'id' => [
+            'role' => [
                 'label' => 'role',
-                'func' => function($value){
+                'func' => function(){
+                    $value = $this->headers->data->id;
                     $user = User::get()->where('id',$value)->first();
-                    if($user->hasRole('admin')){
+                    if($user->hasRole('administrator')){
                         return 'administrator';
                     }else if($user->hasRole('user')){
                         return 'user';
