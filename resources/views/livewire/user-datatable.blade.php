@@ -66,6 +66,11 @@
             <input wire:model="editPassword" type="text" name="Password" class="bg-grey-200 mt-2 p-2 shadow-md focus:bg-gray-300" >
             <p class="font-red-500" >{{$formResponseError}}</p>
             <h2 class="text-green-500 bg-success w-full mt-2">{{$formResponseSuccess}}</h2>
+
+            @if($formResponseSuccess != '')
+            <button class="mt-4 bg-gray-500 text-gray-200 h-10  hover:bg-gray-800" type="button" wire:click="resetForm"> Go back to users</button>
+            @endif
+
             <button class="mt-4 bg-gray-500 text-gray-200 h-10  hover:bg-gray-800" type="submit"> Submit</button>
         </form>
     </div>
