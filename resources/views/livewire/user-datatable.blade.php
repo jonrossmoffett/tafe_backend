@@ -80,7 +80,8 @@
 
             <select wire:model="newRole">
                 <option wire:model="currentRole" selected>{{$currentRole}}</option>
-                <option value="second" selected></option>
+                <option value="user">user</option>
+                <option value="admin">administrator</option>
             </select>
 
             <p class="font-red-500" >{{$formResponseError}}</p>

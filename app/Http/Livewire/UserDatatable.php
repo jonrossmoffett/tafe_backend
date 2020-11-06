@@ -25,6 +25,7 @@ class UserDatatable extends Component
     public $editId = null;
     public $currentRole = '';
     public $toggleForm = false;
+    public $newRole = '';
 
     public $ErrorMessage = '';
 
@@ -105,7 +106,7 @@ class UserDatatable extends Component
             $this->currentRole = 'no role';
         }
 
-        
+
         
     }
 
@@ -123,6 +124,8 @@ class UserDatatable extends Component
         $this->formResponseSuccess = '';
         $this->formResponseError = '';
         $this->editId = null;
+        $this->currentRole = '';
+        $this->newRole = '';
     }
 
     public function save(){
@@ -132,6 +135,16 @@ class UserDatatable extends Component
 
         if($this->editPassword !== ''){
             $user->password = Hash::make($this->editPassword);
+        }
+
+        dd($newRole);
+
+        if($this->newRole = 'administrator'){
+            $user->detachRoles(['user']);
+            $user->attachRoles(['administrator']);
+        }else if($this->newRole = 'user'){
+            $user->detachRoles(['administrator']);
+            $user->attachRoles(['user']);
         }
 
         if($user->save()){
