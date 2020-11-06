@@ -55,8 +55,9 @@
             <input wire:model="editDescription" type="text" name="Email" class="bg-grey-200 mt-2 " >
             <label class="col-6 mt-4">Status</label>
             <select wire:model="editStatus">
-            <option value="1">Solved</option>
-            <option value="0">Unsolved</option>
+            <option wire:model="editCurrentStatus">{{$editCurrentStatus}}</option>
+            <option value="Solved">Solved</option>
+            <option value="Unsolved">Unsolved</option>
             </select>
             <p class="font-red-500" >{{$formResponseError}}</p>
             <h2 class="text-green-500 bg-success w-full mt-2">{{$formResponseSuccess}}</h2>

@@ -21,6 +21,7 @@ class PostsDatatable extends Component
     public $editTitle = '';
     public $editDescription = '';
     public $editStatus= '';
+    public $editCurrentStatus = null;
     public $editId = null;
     public $toggleForm = false;
 
@@ -80,7 +81,7 @@ class PostsDatatable extends Component
         $this->editId = $id;
         $this->editTitle = $post->Title;
         $this->editDescription = $post->Description;
-        $this->editStatus = $post->Status;
+        $this->editCurrentStatus = $post->Status;
     }
 
     public function checkRole($id){
@@ -103,6 +104,13 @@ class PostsDatatable extends Component
         $post = Post::get()->where('id',$this->editId)->first();
         $post->Title = $this->editTitle;
         $post->Description = $this->editDescription;
+
+        if($this->editStatus = 'Solved'){
+            $post->Status = true;
+        }else if($this->editStatus = 'Unsolved'){
+            $post->Status = false;
+        }
+
         $post->Status = $this->editStatus;
 
         if($post->save()){
@@ -110,7 +118,7 @@ class PostsDatatable extends Component
         }else{
             $this->formResponseError = 'could not update user';
         }
-        dd($post->Status);
+
         
     }
 
