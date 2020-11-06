@@ -23,6 +23,7 @@ class UserDatatable extends Component
     public $editEmail = '';
     public $editPassword = '';
     public $editId = null;
+    public $currentRole = '';
     public $toggleForm = false;
 
     public $ErrorMessage = '';
@@ -93,6 +94,19 @@ class UserDatatable extends Component
         $this->editId = $id;
         $this->editEmail = $user->email;
         $this->editName = $user->name;
+
+        if($user->hasRole('administrator')){
+            $this->currentRole = 'administrator';
+        }else if($user->hasRole('user')){
+            $this->currentRole = 'user';
+        }elseif($user->hasRole('superadministrator')){
+            $this->currentRole = 'superadministrator';
+        }else{
+            $this->currentRole = 'no role';
+        }
+
+        
+        
     }
 
     public function checkRole($id){

@@ -36,7 +36,7 @@
                         @endforeach
                         @foreach($computedHeader as $key => $value)
                             <td class="mx-auto text-center py-2 border-t-2">
-                                {{!! is_array($value) ? $value['func']($item->$key) :$item->$key }}
+                                    {{!! is_array($value) ? $value['func']($item->$key) :$item->$key }}
                             </td>
                         @endforeach
                         
@@ -76,6 +76,13 @@
             <input wire:model="editEmail" type="text" name="Email" class="bg-grey-200 mt-2 p-2 shadow-md focus:bg-gray-300" >
             <label class="col-6 mt-4">Password</label>
             <input wire:model="editPassword" type="text" name="Password" class="bg-grey-200 mt-2 p-2 shadow-md focus:bg-gray-300" >
+            <label class="col-6 mt-4">Role</label>
+
+            <select wire:model="newRole">
+                <option wire:model="currentRole" selected></option>
+                <option value="second" selected></option>
+            </select>
+
             <p class="font-red-500" >{{$formResponseError}}</p>
             <h2 class="text-green-500 bg-success w-full mt-2">{{$formResponseSuccess}}</h2>
 
