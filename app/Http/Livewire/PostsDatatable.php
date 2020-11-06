@@ -81,7 +81,6 @@ class PostsDatatable extends Component
         $this->editTitle = $post->Title;
         $this->editDescription = $post->Description;
         $this->editStatus = $post->Status;
-        dd($this->editStatus);
     }
 
     public function checkRole($id){
