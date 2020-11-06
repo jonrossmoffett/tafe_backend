@@ -11,7 +11,7 @@
                 <!-- <x-jet-welcome /> -->
                 <!-- <livewire:user-datatable /> -->
 
-                @if(Auth::user()->hasRole('superadministrator','administrator'))
+                @if(Auth::user()->hasRole('superadministrator') or Auth::user()->hasRole('administrator'))
 
 
                     <h1>you are logged in as an admin. please click on the admin tab to make changes</h1>
