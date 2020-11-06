@@ -56,16 +56,16 @@
             <label class="col-6 mt-4">Status</label>
             <select wire:model="editStatus">
 
-                @if($editStatus = 1)
-                <option value="1" class="bg-gray-300" selected>Solved</option>
-                @endif
-                
-                @if($editStatus = 0)
-                <option value="0" class="bg-gray-300" selected>Unsolved</option>
+                @if($editStatus == true)
+                <option value="true" class="bg-gray-300" selected>Solved</option>
                 @endif
 
-                <option value="1">Solved</option>
-                <option value="0">Unsolved</option>
+                @if($editStatus == false)
+                <option value="false" class="bg-gray-300" selected>Unsolved</option>
+                @endif
+
+                <option value="true">Solved</option>
+                <option value="false">Unsolved</option>
 
             </select>
             <p class="font-red-500" >{{$formResponseError}}</p>
