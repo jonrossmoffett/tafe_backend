@@ -103,14 +103,11 @@ class PostsDatatable extends Component
         $post = Post::get()->where('id',$this->editId)->first();
         $post->Title = $this->editTitle;
         $post->Description = $this->editDescription;
-        $post->status = $this->editStatus;
+        $post->Status = $this->editStatus;
 
         if($post->save()){
-
-
                 $this->formResponseSuccess = 'Updated form';
 
-            
         }else{
             $this->formResponseError = 'could not update user';
         }
