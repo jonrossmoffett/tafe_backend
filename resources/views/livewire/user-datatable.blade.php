@@ -54,7 +54,7 @@
     @if($toggleForm)
 
     <div class=" w-full flex justify-content-center">
-        <form wire:submit.prevent="save" class="grid grid-cols-1 mx-auto mt-4 mb-4 bg-gray-100 px-4 py-4 rounded-md ">
+        <form wire:submit.prevent="save" class="grid grid-cols-1 mx-auto mt-4 mb-4 bg-gray-400 px-4 py-4 rounded-md ">
             <div class="flex justify-between">
                 <label class="col-6 mt-2">Name</label>
                 <button class="bg-red-600 text-gray-100 w-10" type="button" wire:click="resetForm">X</button>
