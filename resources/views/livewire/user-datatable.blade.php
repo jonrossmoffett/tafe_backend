@@ -79,7 +79,7 @@
             <label class="col-6 mt-4">Role</label>
 
             <select wire:model="newRole">
-                <option wire:model="currentRole" selected></option>
+                <option wire:model="currentRole" selected>{{$currentRole}}</option>
                 <option value="second" selected></option>
             </select>
 
