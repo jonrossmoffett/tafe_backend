@@ -40,11 +40,15 @@ class UserDatatable extends Component
                 'func' => function($value){
                     return $value->diffForHumans();
                 }
-            ],
-            'role' => [
+            ]
+        ];
+    }
+
+    private function computedHeader(){
+        return [
+            'id' => [
                 'label' => 'role',
-                'func' => function(){
-                    $value = $this->headers->data->id;
+                'func' => function($value){
                     $user = User::get()->where('id',$value)->first();
                     if($user->hasRole('administrator')){
                         return 'administrator';
@@ -153,7 +157,8 @@ class UserDatatable extends Component
     {
         return view('livewire.user-datatable', [
             'data' => $this->resultData(),
-            'headers' => $this->headerConfig()
+            'headers' => $this->headerConfig(),
+            'computedHeader' => $this->computedHeader()
         ]);
     }
 }

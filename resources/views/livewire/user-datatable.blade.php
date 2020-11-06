@@ -14,6 +14,13 @@
                 {{is_array($value) ? $value['label'] : $value}}
             </th>
             @endforeach
+
+            @foreach($computedHeader as $key => $value)
+            <th class="py-2 px-2" style="cursor: pointer" wire:click="sort('{{$key}}')">
+                {{is_array($value) ? $value['label'] : $value}}
+            </th>
+            @endforeach
+
             <th>delete</th>
             <th>Edit</th>
         </thead>
