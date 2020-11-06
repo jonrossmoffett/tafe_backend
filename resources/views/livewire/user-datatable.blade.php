@@ -1,10 +1,11 @@
 <div class="grid grid-cols-1 bg-gray-100">
 
+    @if(! $toggleForm)
 <div class="grid grid-cols-6 grid-flow-col bg-gray-100">
         <input  wire:model="searchTerm" placeholder="Search...." class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-t-lg text-sm focus:outline-none px-2 "/>
 </div>
 
-    @if(! $toggleForm)
+    
     <table class="w-full bg-gray-200">
 
         <thead class="bg-gray-300 py-2 px-2">
@@ -58,14 +59,14 @@
                 <label class="col-6 mt-2">Name</label>
                 <button class="bg-red-600 text-gray-100 w-10" type="button" wire:click="resetForm">X</button>
             </div>
-            <input wire:model="editName" type="text" name="Name" class="bg-grey-200 mt-2" >
+            <input wire:model="editName" type="text" name="Name" class="bg-grey-200 mt-2 p-1 " >
             <label class="col-6 mt-4">Email</label>
-            <input wire:model="editEmail" type="text" name="Email" class="bg-grey-200 mt-2 " >
+            <input wire:model="editEmail" type="text" name="Email" class="bg-grey-200 mt-2 p-2" >
             <label class="col-6 mt-4">Password</label>
-            <input wire:model="editPassword" type="text" name="Password" class="bg-grey-200 mt-2" >
+            <input wire:model="editPassword" type="text" name="Password" class="bg-grey-200 mt-2 p-3" >
             <p class="font-red-500" >{{$formResponseError}}</p>
             <h2 class="text-green-500 bg-success w-full mt-2">{{$formResponseSuccess}}</h2>
-            <button class="mt-4 bg-gray-500 text-gray-200" type="submit"> Submit</button>
+            <button class="mt-4 bg-gray-500 text-gray-200 h-20" type="submit"> Submit</button>
         </form>
     </div>
 
