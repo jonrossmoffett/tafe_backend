@@ -4,6 +4,7 @@
         <input  wire:model="searchTerm" placeholder="Search...." class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-t-lg text-sm focus:outline-none px-2 "/>
 </div>
 
+    @if(! $toggleForm)
     <table class="w-full bg-gray-200">
 
         <thead class="bg-gray-300 py-2 px-2">
@@ -38,6 +39,8 @@
         </tbody>
     </table>
     {{$data->links()}}
+
+    @endif
 
     @if($ErrorMessage !== '')
     <div class="flex justify-between bg-red-600" wire:click="CloseErrorMsg">
