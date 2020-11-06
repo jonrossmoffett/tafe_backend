@@ -34,6 +34,11 @@
                                 {{!! is_array($value) ? $value['func']($item->$key) :$item->$key }}
                             </td>
                         @endforeach
+                        @foreach($computedHeader as $key => $value)
+                            <td class="mx-auto text-center py-2 border-t-2">
+                                {{!! is_array($value) ? $value['func']($item->$key) :$item->$key }}
+                            </td>
+                        @endforeach
                         
                         
                         <td class="text-center py-2 border-t-2" wire:click="delete({{$item->id}})">delete</td>
