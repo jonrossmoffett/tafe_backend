@@ -59,14 +59,14 @@
                 <label class="col-6 mt-2">Name</label>
                 <button class="bg-red-600 text-gray-100 w-10" type="button" wire:click="resetForm">X</button>
             </div>
-            <input wire:model="editName" type="text" name="Name" class="bg-grey-200 mt-2 p-1 " >
+            <input wire:model="editName" type="text" name="Name" class="bg-grey-200 mt-2 p-2 shadow-md focus:bg-gray-300" >
             <label class="col-6 mt-4">Email</label>
-            <input wire:model="editEmail" type="text" name="Email" class="bg-grey-200 mt-2 p-2" >
+            <input wire:model="editEmail" type="text" name="Email" class="bg-grey-200 mt-2 p-2 shadow-md focus:bg-gray-300" >
             <label class="col-6 mt-4">Password</label>
-            <input wire:model="editPassword" type="text" name="Password" class="bg-grey-200 mt-2 p-3" >
+            <input wire:model="editPassword" type="text" name="Password" class="bg-grey-200 mt-2 p-2 shadow-md focus:bg-gray-300" >
             <p class="font-red-500" >{{$formResponseError}}</p>
             <h2 class="text-green-500 bg-success w-full mt-2">{{$formResponseSuccess}}</h2>
-            <button class="mt-4 bg-gray-500 text-gray-200 h-20" type="submit"> Submit</button>
+            <button class="mt-4 bg-gray-500 text-gray-200 h-10  hover:bg-gray-800" type="submit"> Submit</button>
         </form>
     </div>
 
