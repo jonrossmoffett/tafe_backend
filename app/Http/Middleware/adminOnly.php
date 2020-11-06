@@ -20,7 +20,9 @@ class adminOnly
     public function handle(Request $request, Closure $next)
     {
         $user = auth()->user();
-        if($user->hasRole('superadministrator','administrator')){
+        if($user->hasRole('superadministrator')){
+            return $next($request);
+        }elseif ($user->hasRole('administrator')){
             return $next($request);
         }
     
