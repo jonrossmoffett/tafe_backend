@@ -1,10 +1,15 @@
 <div>
-    <input wire:model="searchTerm" placeholder="Search...."/>
-    <table class="w-full bg-gray-500">
-        {{$uid}}
-        <thead class="bg-gray-200">
+
+@if(! $toggleForm)
+<div class="grid grid-cols-6 grid-flow-col bg-gray-100">
+        <input  wire:model="searchTerm" placeholder="Search...." class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-t-lg text-sm focus:outline-none px-2 "/>
+</div>
+
+    <table class="w-full bg-gray-200">
+        
+        <thead class="bg-gray-300 py-2 px-2">
             @foreach($headers as $key => $value)
-            <th style="cursor: pointer" wire:click="sort('{{$key}}')">
+            <th class="py-2 px-2" style="cursor: pointer" wire:click="sort('{{$key}}')">
                 {{is_array($value) ? $value['label'] : $value}}
             </th>
             @endforeach
@@ -15,16 +20,16 @@
         <tbody>
             @if(count($data))
                 @foreach($data as $item)
-                    <tr>
+                    <tr class="py-2">
                         @foreach($headers as $key => $value)
-                            <td class="mx-auto text-center">
+                            <td class="mx-auto text-center py-2 border-t-2">
                                 {{!! is_array($value) ? $value['func']($item->$key) :$item->$key }}
                             </td>
                         @endforeach
                         
                         
-                        <td class="text-center" wire:click="delete({{$item->id}})">delete</td>
-                        <td class="text-center" wire:click="updateForm({{$item->id}})">Edit</td>
+                        <td class="text-center py-2 border-t-2" wire:click="delete({{$item->id}})">delete</td>
+                        <td class="text-center py-2 border-t-2" wire:click="updateForm({{$item->id}})">Edit</td>
                     </tr>
                 @endforeach
             @else
@@ -34,6 +39,8 @@
         </tbody>
     </table>
     {{$data->links()}}
+
+@endif
 
     @if($toggleForm)
 
