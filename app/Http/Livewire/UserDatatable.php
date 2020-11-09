@@ -159,8 +159,7 @@ class UserDatatable extends Component
             $this->formResponseError = 'could not update user';
         }
         
-        $this->editPassword = '';
-        
+        $this->resetForm();
     }
 
     private function resultData(){
