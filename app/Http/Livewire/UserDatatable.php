@@ -137,7 +137,7 @@ class UserDatatable extends Component
             $user->password = Hash::make($this->editPassword);
         }
 
-        //dd($this->newRole);
+        dd($this->newRole);
 
         if($this->newRole = 'administrator'){
             $user->detachRoles(['user','administrator']);
