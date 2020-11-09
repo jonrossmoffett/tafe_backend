@@ -32,6 +32,13 @@ class UserDatatable extends Component
     public $formResponseError = '';
     public $formResponseSuccess = '';
 
+
+    protected $rules = [
+        'editName' => 'required|min:6',
+        'editPassword' => 'password',
+        'editEmail' => 'required | email'
+    ];
+
     private function headerConfig(){
         return [
             'id' => 'id',
@@ -129,6 +136,9 @@ class UserDatatable extends Component
     }
 
     public function save(){
+
+        $this->validate();
+
         $user = User::get()->where('id',$this->editId)->first();
         $user->name = $this->editName;
         $user->email = $this->editEmail;
