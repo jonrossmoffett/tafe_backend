@@ -19,8 +19,8 @@ class UserDatatable extends Component
     public $sortColumn = 'name';
     public $sortDirection = "asc";
 
-    public $editName = '';
-    public $editEmail = '';
+    public $name = '';
+    public $email = '';
     public $editPassword = '';
     public $editId = null;
     public $currentRole = '';
@@ -34,9 +34,9 @@ class UserDatatable extends Component
 
 
     protected $rules = [
-        'editName' => 'required|min:6',
+        'name' => 'required|min:6',
         'editPassword' => 'password',
-        'editEmail' => 'required | email'
+        'email' => 'required | email'
     ];
 
     private function headerConfig(){
@@ -100,8 +100,8 @@ class UserDatatable extends Component
         $user = User::get()->where('id',$id)->first();
         $this->toggleForm = true;
         $this->editId = $id;
-        $this->editEmail = $user->email;
-        $this->editName = $user->name;
+        $this->email = $user->email;
+        $this->name = $user->name;
 
         if($user->hasRole('administrator')){
             $this->currentRole = 'administrator';
@@ -125,8 +125,8 @@ class UserDatatable extends Component
 
     public function resetForm(){
         $this->toggleForm = false;
-        $this->editName = '';
-        $this->editEmail = '';
+        $this->name = '';
+        $this->email = '';
         $this->editPassword = '';
         $this->formResponseSuccess = '';
         $this->formResponseError = '';
@@ -140,8 +140,8 @@ class UserDatatable extends Component
         $this->validate();
 
         $user = User::get()->where('id',$this->editId)->first();
-        $user->name = $this->editName;
-        $user->email = $this->editEmail;
+        $user->name = $this->name;
+        $user->email = $this->email;
 
         if($this->editPassword !== ''){
             $user->password = Hash::make($this->editPassword);
