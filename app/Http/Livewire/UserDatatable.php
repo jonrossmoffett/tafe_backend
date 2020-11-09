@@ -139,10 +139,10 @@ class UserDatatable extends Component
 
         //dd($this->newRole);
 
-        if($this->newRole = 'administrator'){
+        if($this->newRole == 'administrator'){
             $user->detachRoles(['user','administrator']);
             $user->attachRoles(['administrator']);
-        }else if($this->newRole = 'user'){
+        }else if($this->newRole == 'user'){
             $user->detachRoles(['administrator','user']);
             $user->attachRoles(['user']);
         }
