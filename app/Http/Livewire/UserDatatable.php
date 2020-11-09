@@ -25,7 +25,7 @@ class UserDatatable extends Component
     public $editId = null;
     public $currentRole = '';
     public $toggleForm = false;
-    public $newRole = '';
+    public $newRole = 'user';
 
     public $ErrorMessage = '';
 
@@ -125,7 +125,7 @@ class UserDatatable extends Component
         $this->formResponseError = '';
         $this->editId = null;
         $this->currentRole = '';
-        $this->newRole = '';
+        $this->newRole = 'user';
     }
 
     public function save(){
