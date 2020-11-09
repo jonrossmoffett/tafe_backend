@@ -71,11 +71,11 @@
                 <label class="col-6 mt-2">Name</label>
                 <button class="bg-red-600 text-gray-100 w-10" type="button" wire:click="resetForm">X</button>
             </div>
-            <input wire:model="name" type="text" name="Name" class="bg-grey-200 mt-2 p-2 shadow-md focus:bg-gray-300" >
+            <input wire:model="name" type="text" required name="Name" class="bg-grey-200 mt-2 p-2 shadow-md focus:bg-gray-300" >
             @error('name') <span class="text-red-800 mt-2 bg-gray-100 p-2">{{ $message }}</span> @enderror
             <label class="col-6 mt-4">Email</label>
             @error('email') <span class="text-red-800 mt-2 bg-gray-100 p-2">{{ $message }}</span> @enderror
-            <input wire:model="email" type="text" name="Email" class="bg-grey-200 mt-2 p-2 shadow-md focus:bg-gray-300" >
+            <input wire:model="email" type="email" required name="Email" class="bg-grey-200 mt-2 p-2 shadow-md focus:bg-gray-300" >
             <label class="col-6 mt-4">Password</label>
             <input wire:model="editPassword" type="text" name="Password" class="bg-grey-200 mt-2 p-2 shadow-md focus:bg-gray-300" >
             <label class="col-6 mt-4">Role</label>
