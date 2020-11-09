@@ -79,8 +79,7 @@
             <label class="col-6 mt-4">Role</label>
 
             <select wire:model="newRole" required>
-                <!-- <option wire:model="currentRole" selected>{{$currentRole}}</option> -->
-                <option value="user">user</option>
+                <option value="user" selected>user</option>
                 <option value="administrator">administrator</option>
             </select>
 
