@@ -72,9 +72,9 @@
                 <button class="bg-red-600 text-gray-100 w-10" type="button" wire:click="resetForm">X</button>
             </div>
             <input wire:model="name" type="text" name="Name" class="bg-grey-200 mt-2 p-2 shadow-md focus:bg-gray-300" >
-            @error('name') <span class="error">{{ $message }}</span> @enderror
+            @error('name') <span class="text-red-500 mt-2">{{ $message }}</span> @enderror
             <label class="col-6 mt-4">Email</label>
-            @error('email') <span class="error">{{ $message }}</span> @enderror
+            @error('email') <span class="text-red-400 mt-2">{{ $message }}</span> @enderror
             <input wire:model="email" type="text" name="Email" class="bg-grey-200 mt-2 p-2 shadow-md focus:bg-gray-300" >
             <label class="col-6 mt-4">Password</label>
             <input wire:model="editPassword" type="text" name="Password" class="bg-grey-200 mt-2 p-2 shadow-md focus:bg-gray-300" >
