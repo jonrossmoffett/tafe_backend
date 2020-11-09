@@ -78,8 +78,8 @@
             <input wire:model="editPassword" type="text" name="Password" class="bg-grey-200 mt-2 p-2 shadow-md focus:bg-gray-300" >
             <label class="col-6 mt-4">Role</label>
 
-            <select wire:model="newRole">
-                <option wire:model="currentRole" selected>{{$currentRole}}</option>
+            <select wire:model="newRole" required>
+                <!-- <option wire:model="currentRole" selected>{{$currentRole}}</option> -->
                 <option value="user">user</option>
                 <option value="administrator">administrator</option>
             </select>
