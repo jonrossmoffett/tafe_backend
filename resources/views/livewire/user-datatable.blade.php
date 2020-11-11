@@ -77,7 +77,7 @@
             @error('email') <span class="text-red-800 mt-2 bg-gray-100 p-2">{{ $message }}</span> @enderror
             <input wire:model="email" type="email" required name="Email" class="bg-grey-200 mt-2 p-2 shadow-md focus:bg-gray-300" >
             <label class="col-6 mt-4">Password</label>
-            <input wire:model="editPassword" type="text" name="Password" class="bg-grey-200 mt-2 p-2 shadow-md focus:bg-gray-300" >
+            <input wire:model="editPassword" type="password" name="Password" class="bg-grey-200 mt-2 p-2 shadow-md focus:bg-gray-300" >
             <label class="col-6 mt-4">Role</label>
 
             <select wire:model="newRole" required>
