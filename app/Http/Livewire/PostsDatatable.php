@@ -15,7 +15,7 @@ class PostsDatatable extends Component
     use WithPagination;
 
     public $searchTerm;
-    public $sortColumn = 'Title';
+    public $sortColumn = 'title';
     public $sortDirection = "asc";
 
     public $editTitle = '';
@@ -33,7 +33,7 @@ class PostsDatatable extends Component
     private function headerConfig(){
         return [
             'id' => 'id',
-            'Description' => 'Description',
+            'description' => 'Description',
             'created_at' => [
                 'label' => 'created',
                 'func' => function($value){
@@ -50,7 +50,7 @@ class PostsDatatable extends Component
                     }
                 }
             ],
-            'Status' => [
+            'status' => [
                 'label' => 'status',
                 'func' => function($value){
                     if($value == true){
@@ -123,8 +123,8 @@ class PostsDatatable extends Component
         return Post::where(function ($query){
 
             if($this->searchTerm != ''){
-                $query->where('Title', 'like' , '%'.$this->searchTerm.'%')
-                ->orWhere('Description', 'like' , '%'.$this->searchTerm.'%');
+                $query->where('title', 'like' , '%'.$this->searchTerm.'%')
+                ->orWhere('description', 'like' , '%'.$this->searchTerm.'%');
             }
 
         })->orderBy($this->sortColumn,$this->sortDirection)->paginate(10);
