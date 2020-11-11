@@ -21,6 +21,6 @@ class userSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->count(30)->has(Post::factory()->count(5)->state(new Sequence(['Status' => 0],['Status' => 1])))->create();
+        User::factory()->count(30)->has(Post::factory()->count(5)->state(new Sequence(['status' => 0],['status' => 1])))->create();
     }
 }
