@@ -34,6 +34,7 @@ class PostsDatatable extends Component
         return [
             'id' => 'id',
             'description' => 'Description',
+            'title' => 'Title',
             'created_at' => [
                 'label' => 'created',
                 'func' => function($value){
