@@ -78,9 +78,9 @@ class PostsDatatable extends Component
         $post = Post::get()->where('id',$id)->first();
         $this->toggleForm = true;
         $this->editId = $id;
-        $this->editTitle = $post->Title;
-        $this->editDescription = $post->Description;
-        $this->editStatus = $post->Status;
+        $this->editTitle = $post->title;
+        $this->editDescription = $post->description;
+        $this->editStatus = $post->status;
     }
 
     public function checkRole($id){
@@ -101,9 +101,9 @@ class PostsDatatable extends Component
 
     public function save(){
         $post = Post::get()->where('id',$this->editId)->first();
-        $post->Title = $this->editTitle;
-        $post->Description = $this->editDescription;
-        $post->Status = $this->editStatus;
+        $post->title = $this->editTitle;
+        $post->description = $this->editDescription;
+        $post->status = $this->editStatus;
 
         if($post->save()){
                 $this->formResponseSuccess = 'Updated form';
